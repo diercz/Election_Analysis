@@ -39,10 +39,10 @@ with open(file_to_load) as election_data:
         if candidate_name not in candidate_options:
         
         # Add the candidate name to the candidate list
-                candidate_options.append(candidate_name)
+            candidate_options.append(candidate_name)
         
         # begin tracking that candidates vote count
-                candidate_votes[candidate_name] = 0
+            candidate_votes[candidate_name] = 0
 
         # counting candidate votes
         candidate_votes[candidate_name] += 1
@@ -50,29 +50,27 @@ with open(file_to_load) as election_data:
 # Determine the percentage of votes for each candidate by looping through the counts
 #1. iterage through the candidate list
 for candidate_name in candidate_votes:
-        #2. retrieve vote count of a candidate
-        votes = candidate_votes[candidate_name]
-        #3. calculate the percentage of votes
-        vote_percentage = (votes) / (total_votes) * 100
-        #4. print the candidate name and percentage of votes
-        print(f"{candidate_name}: received {vote_percentage:,.2f}% of the vote")
+    #2. retrieve vote count of a candidate
+    votes = candidate_votes[candidate_name]
+    #3. calculate the percentage of votes
+    vote_percentage = float(votes) / float(total_votes) * 100
+    #4. print the candidate name and percentage of votes
+    print(f"{candidate_name}: received {vote_percentage:,.2f}% of the vote")
 
 # Winning Candidate and Winning Count tracker
 
 
 #determine winning vote count and candidate
 #1. detemine if the vote are greater than the winning count
-        if (votes > winning_count) and (vote_percentage > winning_percentage):
+    if (votes > winning_count) and (vote_percentage > winning_percentage):
 #2. if truen then sett winning_count = votes and winning_percentate =
-        # vote_percentage
-                winning_candidate = votes
-                winning_percentage = vote_percentage
-        #3. set the wining candidate equal to the candidates name
-                winning_candidate = candidate_name
-
+    # vote_percentage
+        winning_count = votes
+        winning_percentage = vote_percentage
+        winning_candidate = candidate_name
 
 #print out the winning candidate vote count and percentat to 
-print(f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
+#print(f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
 
 winning_candidate_summary = (
     f"-------------------------\n"
