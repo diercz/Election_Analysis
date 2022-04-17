@@ -3,7 +3,7 @@
 ## Overview of Project
 Colorado Board of Election employees proved tasks to complete an election audit of a recent local congressional election.
 
-##Resoures
+## Resources
 - Data Source: election_results.csv
 - Software: Python 3.7.6, Visual Studio Code
 
